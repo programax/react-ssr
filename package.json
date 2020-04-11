@@ -1,0 +1,38 @@
+{
+  "name": "ssr-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:static": "webpack && babel-node tools/index.js",
+    "build:server": "babel src --out-dir dist && cp -r src/server/views dist/server/views",
+    "build:client": "webpack",
+    "build": "npm run build:client && npm run build:server",
+    "start:server": "nodemon --exec babel-node src/server/index.js",
+    "start:client": "webpack --watch",
+    "start:json": "json-server db.json --port 4000",
+    "start": "npm run start:client & npm run start:server & npm run start:json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "json-server": "^0.16.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

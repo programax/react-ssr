@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
+import styles from './app.css';
+
 const App = (props) => {
     const [hide, setHide] = useState(false);
     // const [items, setItems] = useState([]);
@@ -18,7 +20,7 @@ const App = (props) => {
 
     return (
         <div>
-            <h1>Hola mundo</h1>
+            <h1 className={styles.title}>Hola mundo</h1>
             <button onClick={handleClick}>Toggle</button>
             <ul>
                 {!hide && props.items.map(item =>

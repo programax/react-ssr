@@ -4,7 +4,8 @@ import axios from 'axios';
 import React from 'react';
 import ReactDom from 'react-dom/server';
 
-import App from '../client/components/app';
+// import App from '../client/components/app';
+import {App} from '../../dist/static/lib';
 
 const app = express();
 
